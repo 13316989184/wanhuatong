@@ -21,7 +21,8 @@ export default class AudioItem extends Vue {
       return `/resource/OperaTicket-episodeTwo.mp3#t=${this.start},${this.end}`;
     }
     public play(playbackRate, loop) {
-        const currentAudio = this.$refs[this.start] as any;
+        console.log(this.start)
+        const currentAudio = this.$refs[14.777667] as any;
         currentAudio.playbackRate = playbackRate;
         currentAudio.loop = loop;
         currentAudio.play();
