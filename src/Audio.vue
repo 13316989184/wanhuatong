@@ -20,7 +20,8 @@
 <script lang="ts">
     import {Component, Vue, Watch} from 'vue-property-decorator';
     import AudioItem from '@/AudioItem.vue'; // @ is an alias to /src
-    import {audio} from '@/plugins/audio';
+    // import {audio} from '@/plugins/audio';
+    import {audio} from '@/plugins/test';
 
     @Component({
         components: {
@@ -31,7 +32,8 @@
         public audio = audio;
         public start = 0;
         public end = 0;
-        public audioSrc = `/resource/audio.mp3#t=${this.start},${this.end}`;
+        // public audioSrc = `/resource/audio.mp3#t=${this.start},${this.end}`;
+        public audioSrc = `/resource/19.mp3#t=${this.start},${this.end}`;
 
         play(time) {
             console.log(time)
@@ -42,9 +44,10 @@
             }
             document.getElementById(time).style.color="#3385ff";
             let timeArr = time.split("-");
-            this.start = Number(timeArr[0])-1.3;
-            this.end = Number(timeArr[1])-1.3;
-            this.audioSrc = `/resource/audio.mp3#t=${this.start},${this.end}`;
+            this.start = Number(timeArr[0]);
+            this.end = Number(timeArr[1]);
+            // this.audioSrc = `/resource/audio.mp3#t=${this.start},${this.end}`;
+            this.audioSrc = `/resource/19.mp3#t=${this.start},${this.end}`;
             const currentAudio = this.$refs["audios"] as any;
             currentAudio.load()
             console.log(this.start, this.end)
